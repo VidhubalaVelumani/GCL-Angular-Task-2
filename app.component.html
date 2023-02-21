@@ -1,0 +1,55 @@
+<h3>DATE PIPE</h3>
+<div>{{today | date:'dd-MM-yyyy'}}</div>
+
+<h3>STRING PIPE</h3>
+<div>{{myCompanyName}}</div>
+<div>{{myCompanyName | uppercase}}</div>
+<div>{{myCompanyName | lowercase}}</div>
+
+<h3>NUMBER PIPE</h3>
+<div>{{myNumber}}</div>
+<div>{{myNumber | number}}</div>
+
+<h3>CURRENCY PIPE</h3>
+<div>{{myCurrency}}</div>
+<div>{{myCurrency | currency}}</div>
+<div>{{myCurrency | currency :'INR'}}</div>
+<div>{{myCurrency | currency :'INR' : 'code'}}</div>
+
+<h3>DIRECTIVES</h3>
+<div *ngIf="showUsers">
+<h3 *ngFor="let user of users"></h3>
+<h3 *ngFor="let user of users; let i=index" [ngClass]="{'firstelement' : i==1}" (click)="selectedUser=user.name">{{user.name}}</h3>
+</div>
+<div [ngSwitch]="selectedUser">
+<h1 * ngSwitchCase="'vidhu'">selected user vidhu</h1>
+<h1 * ngSwitchCase="'preethi'">selected user preethi</h1>
+<h1 * ngSwitchDefault>This is default</h1>
+</div>
+
+<h3> FORM MODEL</h3>
+<div formGroupName="address">
+    
+    <label for="firstname">First Name</label>
+    <input id="firstname" type="text" formControlName="firstname"><br><br>
+
+    <label for="lastname">Last Name</label>
+    <input id="lastname" type="text" formControlName="lasstname"><br><br>
+
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street"><br><br>
+  
+    <label for="city">City: </label>
+    <input id="city" type="text" formControlName="city"><br><br>
+  
+    <label for="state">State: </label>
+    <input id="state" type="text" formControlName="state"><br><br>
+  
+    <label for="zip">Zip Code: </label>
+    <input id="zip" type="text" formControlName="zip"><br><br>
+
+    <label>Submit</label>
+    <button id="submit" formControlName="submit"></button>
+  </div>
+
+  
